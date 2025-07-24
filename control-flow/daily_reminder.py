@@ -10,9 +10,9 @@ match priority:
     case "medium":
         message = f"Reminder: '{task}' is a medium priority task"
     case "low":
-        message = f"Note: '{task}' is a low priority task"
+        message = f"Reminder: '{task}' is a low priority task"
     case _:
-        message = f"Note: '{task}' has an unspecified priority"
+        message = f"Reminder: '{task}' has an unspecified priority"
 
 if time_bound == "yes":
     message += " that requires immediate attention today!"
