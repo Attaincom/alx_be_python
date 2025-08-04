@@ -37,3 +37,39 @@ def check_even_odd(number):
 # Example usage
 num = int(input("Enter a number: "))
 check_even_odd(num)
+
+class Book:
+    total_books = 0  # Class variable
+
+    def __init__(self, title):
+        self.title = title
+        Book.total_books += 1
+
+    @classmethod
+    def display_total_books(cls):
+        print(f"Total books created: {cls.total_books}")
+
+# Example usage
+book1 = Book("1984")
+book2 = Book("Animal Farm")
+Book.display_total_books()  # Output: Total books created: 2
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def create_child(cls, name):
+        return cls(name, 0)
+
+    def __str__(self):
+        return f"{self.name}, Age: {self.age}"
+
+# Example usage
+adult = Person("John", 40)
+child = Person.create_child("Johnny")
+
+print(adult)  # Output: John, Age: 40
+print(child)  # Output: Johnny, Age: 0
